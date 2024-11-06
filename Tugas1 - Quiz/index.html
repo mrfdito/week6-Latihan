@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="homeScreen" class="screen active">
+            <h1>Selamat Datang di Quiz Seputar Indonesia</h1>
+            <p>Quiz ini menguji pengetahuan kamu serputar Indonesia!</p>
+            <button class="btn" onclick="showScreen('playerDataScreen')">Start Quiz</button>
+        </div>
+
+        <div id="playerDataScreen" class="screen ">
+            <h2>Masukan identitas dan NIM kamu</h2>
+            <input type="text" id="playerName" placeholder="Your Name">
+            <input type="text" id="playerNIM" placeholder="Your NIM">
+            <button class="btn" onclick="startQuiz()">Mulai Quiz</button>
+        </div>
+
+        <div id="quizScreen" class="screen">
+            <div class="timer" id="timer">30</div>
+            <div class="progress-info">
+                <p>Completed: <span id="completedQuestions">0</span>/<span id="totalQuestions">0</span></p>
+            </div>
+            <div class="question-nav" id="questionNav"></div>
+            <div id="questionContainer"></div>
+            <button class="btn" onclick="previousQuestion()">Sebelumnya</button>
+            <button class="btn" onclick="nextQuestion()">Selanjutnya</button>
+            <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <h2>Quiz Results</h2>
+            <div id="playerInfo"></div>
+            <div id="scoreBreakdown"></div>
+            <div id="totalScore"></div>
+            <button class="btn" onclick="restartQuiz()">Mulai Kembali Quiznya </button>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="script.js"></script>
+</html>
